@@ -1,6 +1,6 @@
 # S3 OUTPUT VARIABLE
 output "arn" {
-  description = "ID of project VPC"
+  description = "Bucket arn"
   value       = aws_s3_bucket.static_website.arn
 }
 output "name" {
@@ -9,9 +9,9 @@ output "name" {
 }
 output "domain" {
   description = "Domain name of the S3 bucket"
-  value       = aws_s3_bucket.static_website.website_domain
+  value       = aws_s3_bucket_website_configuration.website_config.website_domain
 }
 output "endpoint" {
   description = "Endpoint of the S3 bucket"
-  value       = aws_s3_bucket.static_website.website_endpoint
+  value       = aws_s3_bucket_website_configuration.website_config.website_endpoint
 }
